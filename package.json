@@ -1,0 +1,46 @@
+{
+  "name": "cy-basics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
+    "@jest/globals": "^29.7.0",
+    "@types/jest": "^29.5.14",
+    "cypress": "^14.2.1",
+    "jest": "^29.7.0",
+    "multiple-cucumber-html-reporter": "^3.9.2",
+    "ts-jest": "^29.3.0",
+    "typescript": "^5.8.2",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/support/step-definitions/**/*.{js,ts}",
+      "cypress/e2e/[filepath]/**/*.{js,ts}",
+      "cypress/e2e/[filepath].{js,ts}"
+    ],
+    "html": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-html/cucumber-report.html"
+    },
+    "messages": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-ndjson/cucumber-report.ndjson"
+    },
+    "json": {
+      "enabled": true,
+      "formatter": "cucumber-json-formatter",
+      "output": "cypress/reports/cucumber-json/cucumber-report.json"
+    }
+  }
+}
